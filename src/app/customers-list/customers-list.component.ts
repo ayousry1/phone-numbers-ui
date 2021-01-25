@@ -20,7 +20,10 @@ export class CustomersListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource.data = this.customerService.getAllCustomers() as any;
+    // @ts-ignore
+    this.customerService.getAllCustomers().subscribe((data: any[])=>{
+      this.dataSource.data = data;
+    })
   }
 
   ngAfterViewInit(): void {
