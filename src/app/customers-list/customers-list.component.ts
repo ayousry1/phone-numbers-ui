@@ -21,8 +21,6 @@ export class CustomersListComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource.data = this.customerService.getAllCustomers() as any;
-    //this.dataSource.data = this.customerService.getAllCustomers();
-
   }
 
   ngAfterViewInit(): void {
