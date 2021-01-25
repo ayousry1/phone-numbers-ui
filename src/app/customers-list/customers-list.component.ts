@@ -13,6 +13,7 @@ export class CustomersListComponent implements OnInit {
   // @ts-ignore
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource = new MatTableDataSource;
+  filterValue = '';
   displayedColumns: string[] = ['id', 'name', 'phone', 'status', 'country'];
 
   constructor(private customerService: CustomerService) {
@@ -26,6 +27,10 @@ export class CustomersListComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
+  }
+
+  public doFilter = () => {
+    this.dataSource.filter = this.filterValue.trim().toLocaleLowerCase();
   }
 
 }
