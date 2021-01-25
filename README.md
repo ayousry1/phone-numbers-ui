@@ -1,27 +1,57 @@
-# PhoneNumbersUi
+# Customers Numbers Challange
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+The required tools for running this app are as follows
 
-## Development server
+ - Docker
+ - Maven
+ - NodeJs
+ - Angular CLI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Boot up steps
 
-## Code scaffolding
+Below are the list of steps required to run the application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Cloning the repository
 
-## Build
+ 1. clone the backend code using the following command or by extracting the attached zip file 'phone-numbers-svc.zip'
+ 2. clone the frontend code using the following command or by extracting the attached zip file 'phone-numbers-ui.zip'
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**Backend repository clone command**
 
-## Running unit tests
+    git clone https://github.com/ayousry1/phone-numbers-svc.git
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Frontend repository clone command**
 
-## Running end-to-end tests
+    git clone https://github.com/ayousry1/phone-numbers-ui.git
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Booting up the backend
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ 1. navigate to the cloned directory 'phone-numbers-svc'
+ 2. Open command prompt there and type the following commands
+
+**commands**
+
+    mvn clean install
+    
+> 
+    docker build -t phone-number-svc.jar .
+> 
+
+    docker run -p 8080:8080 phone-number-svc.jar
+
+## Booting up the frontend
+
+ 1. navigate to the cloned directory 'phone-numbers-ui'
+ 2. Open command prompt there and type the following commands
+
+**commands**
+
+    npm install
+    
+> 
+    ng serve --prod
+## Running the app
+
+ 1. open chrome and type this URL http://localhost:4200/
+ 2. the application works!
